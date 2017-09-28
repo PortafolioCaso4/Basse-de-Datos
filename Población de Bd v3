@@ -1,0 +1,89 @@
+--Poblacion
+
+--Insert cuentaRol
+insert into  cuentaRol values(1,'APD');
+insert into  cuentaRol values(2,'EJC');
+insert into  cuentaRol values(3,'REP');
+insert into  cuentaRol values(4,'ADM');
+
+----Insert Cuenta		
+insert into cuenta values('adm1','12345678-9','Admin','Admin','Admin','M','Admin@gmail.com','123321','123456789','admin','4');
+insert into cuenta values('rep1','98765432-1','Pedrito','Mena','Lopez','M','Alumno@gmail.com','1234567','987654321','pml123','3');
+insert into cuenta values('apd1','32145687-9','Sandra','Lopez','Lopez','F','apoderado@gmail.com','1234213','9217312','sll123','1');
+insert into cuenta values('ejc1','21345679-8','Carlos','Reyes','Reyes','M','ejecutivoVentas@gmail.com','123421','0218324','crr123','2');
+insert into cuenta values('apd2','12312345-6','Maria','Riquilme','Vera','F','Mriquelme@gmail.com','1231232','9123912','mrv123','1');
+insert into cuenta values('apd3','12345678-1','Brenda','Ramirez','Muñoz','F','bramirez@gmail.com','123124','123124','brm123','1');
+insert into cuenta values('apd4','6532187-6','Matias','Peirano','Poo','M','mpp@gmail.com','1234123','876531238','mpp123','1');
+insert into cuenta values('apd5','73692617-k','Filomena','Campo','Campo','F','Fcampo@gmail.com','124214','124812783','fcc123','1');
+insert into cuenta values('apd6','13758494-1','Cristhian','Perez','Perez','M','Cperez@gmail.com','21381294','123829312','cpp123','1');
+insert into cuenta values('apd7','12312321-2','Renato','Parra','Perez','M','Rperez@gmail.com','1421312','1248213','rpp123','1');
+insert into cuenta values('apd8','75574829-8','Ernesto','Espinoza','Silva','M','ees@gmal.com','7362819','827497194','ees123','1');
+insert into cuenta values('apd9','09843215-0','Paola','Mendez','Mens','F','pmm@gmail.com','123124','124214','pmm123','1');
+insert into cuenta values('apd10','01234567-8','Sergio','Zamorano','Pino','M','szp@gmail.com','4321678','987643187','szp123','1');
+insert into cuenta values('apd11','83917490-9','Pamela','Diaz','Perez','F','pdp@gmail.com','487313','748310938','pdp123','1');
+insert into cuenta values('apd12','38472918-K','Rodrigo','Medina','Silva','M','rms@gmail.com','1239543','854289178','rms123','1');
+insert into cuenta values('apd13','94812341-2','Maria','Paz','Catalan','F','mpc@gmail.com','743219','85738291','mpc123','1');
+insert into cuenta values('apd14','77493721-4','Sebastian','Peters','Lefort','M','spl@gmail.com','837271','965826189','spl123','1');
+
+--Insert Region
+insert into region values('I','Tarapaca','1');
+insert into region values('II','Antofagasta','2');
+insert into region values('III','Atacama','3');
+insert into region values('IV','Coquimbo','4');
+insert into region values('V','Valparaiso','5');
+insert into region values('RM','RegionMetropolitana','RM');
+
+--Insert Escuela
+insert into escuela values('e1','Salesiano','Valparaiso','V');
+insert into escuela values('e2','InstitutoNacional','Santiago','RM');
+insert into escuela values('e3','FrancisSchool','Coquimbo','IV');
+
+--Insert Destino
+
+insert into destino values('AR','Bariloche');
+insert into destino values('BR','Sao Pablo');
+insert into destino values('SC','Sur de Chile');
+
+
+--Insert Curso
+insert into curso values('c1',3000000,'AR','rep1','e2');
+
+--Insert Actividad
+insert into actividad values('rf','rifa');
+insert into actividad values('ft','fiesta');
+
+--Insert curso_actividad
+insert into curso_actividad values(to_date('13-DIC-2017','DD-MM-YYYY'),200000,'c1','rf');
+
+
+
+--Insert Servicio
+insert into servicio values('01','Rafting',15000);
+insert into servicio values('02','Exursiones',10000);
+insert into servicio values('03','Guia turistico',4000);
+insert into servicio values('04','Buses de transporte',20000);
+insert into servicio values('05','Buses+Guia turistico',21000);
+
+
+--Insert Curso_servicio
+insert into curso_servicio values('c1','05');
+insert into curso_servicio values('c1','02');
+insert into curso_servicio values('c1','01');
+
+
+--Insert Alumno
+insert into alumno values(1,'Pedrito','Mena','M','c1','apd1');
+insert into alumno values(alumno_auto_incr.nextval,'Fernanda','Mena','F','c1','apd1');
+insert into alumno values(alumno_auto_incr.nextval,'Macarena','Candia','F','c1','apd2');
+insert into alumno values(alumno_auto_incr.nextval,'Juan','Lopez','M','c1','apd3');
+insert into alumno values(alumno_auto_incr.nextval,'Matias','Peirano','M','c1','apd4');
+insert into alumno values(alumno_auto_incr.nextval,'Rosa','Espinza','F','c1','apd5');
+insert into alumno values(alumno_auto_incr.nextval,'Pablo','Perez','M','c1','apd6');
+insert into alumno values(alumno_auto_incr.nextval,'Rebeca','Parra','M','c1','apd7');
+insert into alumno values(alumno_auto_incr.nextval,'Javiera','Espinoza','F','c1','apd8');
+insert into alumno values(alumno_auto_incr.nextval,'Diego','Reygadas','M','c1','apd9');
+insert into alumno values(alumno_auto_incr.nextval,'Camila','Zamorano','F','c1','apd10');
+insert into alumno values(alumno_auto_incr.nextval,'Matias','Ramirez','M','c1','apd11');
+insert into alumno values(alumno_auto_incr.nextval,'Andres','Medina','M','c1','apd12');
+insert into alumno values(alumno_auto_incr.nextval,'Claudia','Martinez','F','c1','apd13');
+insert into alumno values(alumno_auto_incr.nextval,'Diego','Peters','M','c1','apd14');
