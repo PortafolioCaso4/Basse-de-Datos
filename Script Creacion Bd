@@ -1,0 +1,98 @@
+--crear tabla cuenta 
+create table cuenta(
+cuenta_id varchar2 (10) primary key,
+rut varchar2 (10),
+nombre varchar2 (15),
+apellido_p varchar2 (20),
+apellido_m varchar2 (20),
+sexo varchar2 (1),
+email varchar2 (60),
+telefono varchar2 (15),
+celular varchar2 (9),
+password varchar2 (30),
+rol_id varchar2 (10));
+
+
+--creacioncuenta rol
+create table cuentaRol(
+rol_id varchar2 (10) primary key,
+rol_nombre varchar2 (10)
+);
+
+--crear destino 
+create table Destino(
+destino_id varchar2 (2) primary key,
+nombre varchar2 (20)
+);
+--crear servicio
+create table servicio(
+servicio_id varchar2 (2) primary key,
+nombre varchar2 (255),
+precio number);
+
+--crear actividad
+create table actividad(
+actividad_id varchar2 (2) primary key,
+nombre varchar2 (20)
+);
+
+--crearcurso 
+create table curso (
+curso_id varchar2(2)primary key,
+monto_meta integer,
+destino_id varchar2 (10),
+cuenta_id varchar2 (10),
+escuela_id varchar2(2)
+);
+--crear cursoactividad 
+create table curso_actividad(
+curso_id varchar2(2),
+actividad_id varchar2 (2)
+fecha date,
+monto number);
+
+--crear curso servivio
+create table curso_servicio(
+curso_servicio_id  varchar2 (4)primary key,
+curso_id varchar2(2),
+servicio_id varchar2 (2)
+);
+--crear alumno
+create table alumno(
+alumno_id varchar2 (2) primary key,
+nombre varchar2 (15),
+apellido varchar2 (15),
+sexo varchar2 (1),
+curso_id varchar2(2),
+cuenta_id varchar2 (10)
+);
+--crear escuela
+create table escuela(
+escuela_id varchar2(2) primary key ,
+nombre varchar2 (25),
+ciudad varchar2(30),
+region_id varchar2(2)
+);
+--crear region
+create table region(
+region_id varchar2(2) primary key,
+nombre varchar2 (25),
+posicion varchar2(2)
+);
+
+--creacion claves foraneas
+alter table cuenta add constraint FK_cuentarol_rol_id foreign key (rol_id)references cuentaRol(rol_id);
+alter table curso add constraint FK_destino_id foreign key (destino_id)references destino(destino_id);
+alter table curso add constraint FK_cuenta_id foreign key (cuenta_id)references cuenta(cuenta_id);
+alter table curso add constraint FK_escuela_id foreign key (escuela_id)references escuela(escuela_id);
+alter table curso_actividad add constraint FK_actividad_id foreign key (actividad_id)references actividad(actividad_id);
+alter table curso_actividad add constraint FK_curso_id foreign key (curso_id)references curso(curso_id);
+alter table curso_servicio add constraint FK_servicio_id foreign key (servicio_id)references servicio(servicio_id);
+alter table curso_servicio add constraint FK_curso2_id foreign key (curso_id)references curso(curso_id);
+alter table alumno add constraint FK_curso_curso_id foreign key (curso_id)references curso(curso_id);
+alter table alumno add constraint FK_cuenta_cuenta_id foreign key (cuenta_id)references cuenta(cuenta_id);
+alter table escuela add constraint FK_region_region_id foreign key (region_id)references region(region_id);
+
+--secuencias id 
+create sequence alumno_auto_incr start with 1
+increment by 1 ;
